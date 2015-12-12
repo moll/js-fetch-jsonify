@@ -1,4 +1,4 @@
-## Unreleased
+## 0.1.338 (Dec 12, 2015)
 - Deletes the `json` property before calling `fetch`.
 
 ## 0.1.337 (Dec 11, 2015)
