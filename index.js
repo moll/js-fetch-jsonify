@@ -9,7 +9,7 @@ exports.fetch = function(fetch, url, opts) {
   if (opts != null && opts.json !== undefined) opts = merge({}, opts, {
     headers: {"Content-Type": "application/json"},
     body: JSON.stringify(opts.json)
-  })
+  }), delete opts.json
 
   return fetch(url, opts)
 }

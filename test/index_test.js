@@ -1,6 +1,7 @@
 var Sinon = require("sinon")
 var Fetch = require("./fetch")
-var fetch = require("..")(Fetch)
+var FetchJson = require("..")
+var fetch = FetchJson(Fetch)
 var URL = "https://example.com/models"
 
 // Sinon appends charset to Content-Type:
@@ -55,6 +56,13 @@ describe("FetchJson", function() {
     this.requests[0].url.must.equal(URL)
     this.requests[0].requestHeaders.must.be.empty()
     this.requests[0].must.have.property("requestBody", null)
+  })
+
+  it("must delete json property", function() {
+    var fetch = Sinon.spy()
+    FetchJson(fetch)("/", {json: {}})
+    fetch.callCount.must.equal(1)
+    fetch.firstCall.args[1].must.not.have.property("json")
   })
 
   it("must respond", function*() {
