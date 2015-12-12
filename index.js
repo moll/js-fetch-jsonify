@@ -1,6 +1,7 @@
 var assign = require("oolong").assign
 var defaults = require("oolong").defaults
-var CONTENT_TYPE = /^content-type$/i
+var CONTENT_TYPE ="application/json"
+var CONTENT_TYPE_HEADER = /^content-type$/i
 
 exports = module.exports = function(fetch) {
   return assign(exports.fetch.bind(null, fetch), fetch)
@@ -23,10 +24,10 @@ exports.stringify = function(url, opts) {
 
 function addContentType(headers) {
   if (headers && hasContentType(headers)) return headers
-  else return defaults({"Content-Type": "application/json"}, headers)
+  else return defaults({"Content-Type": CONTENT_TYPE}, headers)
 }
 
 function hasContentType(headers) {
-  for (var name in headers) if (CONTENT_TYPE.test(name)) return true
+  for (var name in headers) if (CONTENT_TYPE_HEADER.test(name)) return true
   return false
 }
