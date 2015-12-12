@@ -30,6 +30,30 @@ describe("FetchJson", function() {
     this.requests[0].requestBody.must.equal(JSON.stringify(body))
   })
 
+  it("must request with given Content-Type", function() {
+    var body = {name: "John"}
+    var type = "application/vnd.foo+json"
+    fetch(URL, {method: "POST", headers: {"Content-Type": type}, json: body})
+
+    this.requests[0].method.must.equal("POST")
+    this.requests[0].url.must.equal(URL)
+    this.requests[0].requestHeaders["content-type"].must.include(type)
+    this.requests[0].requestBody.must.equal(JSON.stringify(body))
+  })
+
+  // Even though it works right now, it depends on key insertion ordering.
+  // Not a particularly robust approach.
+  it("must request with given Content-Type if not capitalized", function() {
+    var body = {name: "John"}
+    var type = "application/vnd.foo+json"
+    fetch(URL, {method: "POST", headers: {"content-type": type}, json: body})
+
+    this.requests[0].method.must.equal("POST")
+    this.requests[0].url.must.equal(URL)
+    this.requests[0].requestHeaders["content-type"].must.include(type)
+    this.requests[0].requestBody.must.equal(JSON.stringify(body))
+  })
+
   it("must request with JSON if body given", function() {
     var body = {name: "John"}
     fetch(URL, {method: "POST", json: body, body: "Nope"})

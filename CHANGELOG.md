@@ -1,3 +1,6 @@
+## Unreleased
+- Doesn't overwrite `Content-Type` if already set.
+
 ## 0.1.338 (Dec 12, 2015)
 - Deletes the `json` property before calling `fetch`.
 
