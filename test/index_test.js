@@ -59,10 +59,10 @@ describe("FetchJson", function() {
   })
 
   it("must delete json property", function() {
-    var fetch = Sinon.spy()
-    FetchJson(fetch)("/", {json: {}})
-    fetch.callCount.must.equal(1)
-    fetch.firstCall.args[1].must.not.have.property("json")
+    var spy = Sinon.spy(() => new Promise(() => {}))
+    FetchJson(spy)("/", {json: {}})
+    spy.callCount.must.equal(1)
+    spy.firstCall.args[1].must.not.have.property("json")
   })
 
   it("must respond", function*() {
