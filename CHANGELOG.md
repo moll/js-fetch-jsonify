@@ -1,4 +1,4 @@
-## Unreleased
+## 0.2.0 (Dec 14, 2015)
 - Doesn't overwrite `Content-Type` if already set.
 - Renames to FetchJsonify.
 
