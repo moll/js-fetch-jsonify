@@ -1,14 +1,14 @@
 var Sinon = require("sinon")
 var Fetch = require("./fetch")
-var FetchJson = require("..")
-var fetch = FetchJson(Fetch)
+var FetchJsonify = require("..")
+var fetch = FetchJsonify(Fetch)
 var URL = "https://example.com/models"
 
 // Sinon appends charset to Content-Type:
 // https://github.com/sinonjs/sinon/issues/607:
 var JSON_TYPE = /^application\/json\b/
 
-describe("FetchJson", function() {
+describe("FetchJsonify", function() {
   beforeEach(function() {
     var xhr = global.XMLHttpRequest = Sinon.FakeXMLHttpRequest
     xhr.onCreate = Array.prototype.push.bind(this.requests = [])
@@ -84,7 +84,7 @@ describe("FetchJson", function() {
 
   it("must delete json property", function() {
     var spy = Sinon.spy(() => new Promise(() => {}))
-    FetchJson(spy)("/", {json: {}})
+    FetchJsonify(spy)("/", {json: {}})
     spy.callCount.must.equal(1)
     spy.firstCall.args[1].must.not.have.property("json")
   })

@@ -1,10 +1,10 @@
 {
-	"name": "@moll/fetch-json",
+	"name": "@moll/fetch-jsonify",
 	"version": "0.1.338",
 	"description": "",
 	"keywords": [],
-	"homepage": "https://github.com/moll/js-fetch-json",
-	"bugs": "https://github.com/moll/js-fetch-json/issues",
+	"homepage": "https://github.com/moll/js-fetch-jsonify",
+	"bugs": "https://github.com/moll/js-fetch-jsonify/issues",
 
 	"author": {
 		"name": "Andri Möll",
@@ -14,12 +14,12 @@
 
 	"repository": {
 		"type": "git",
-		"url": "git://github.com/moll/js-fetch-json.git"
+		"url": "git://github.com/moll/js-fetch-jsonify.git"
 	},
 
 	"licenses": [{
 		"type": "LAGPL",
-		"url": "https://github.com/moll/js-fetch-json/blob/master/LICENSE"
+		"url": "https://github.com/moll/js-fetch-jsonify/blob/master/LICENSE"
 	}],
 
 	"main": "index.js",
