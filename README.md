@@ -1,10 +1,12 @@
 FetchJSONify.js
 ===============
 [![NPM version][npm-badge]](https://www.npmjs.com/package/fetch-jsonify)
+[![Build status][travis-badge]](https://travis-ci.org/moll/js-fetch-jsonify)
 
 Fetch JSONify is a mixin for the [Fetch API][fetch] for browsers and Node.js that stringifies JSON and sets the `Content-Type` header if not given. It's functional and immutable, in that it doesn't modify any properties given to it.
 
 [npm-badge]: https://img.shields.io/npm/v/fetch-jsonify.svg
+[travis-badge]: https://travis-ci.org/moll/js-fetch-jsonify.png?branch=master
 [fetch]: https://developer.mozilla.org/en/docs/Web/API/Fetch_API
 
 
