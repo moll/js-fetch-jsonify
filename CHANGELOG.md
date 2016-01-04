@@ -1,3 +1,6 @@
+## 1.0.0 (Jan 4, 2016)
+- More JavaScript JSON object notations!
+
 ## 0.2.0 (Dec 14, 2015)
 - Doesn't overwrite `Content-Type` if already set.
 - Renames to FetchJsonify.
