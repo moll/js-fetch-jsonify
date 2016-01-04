@@ -8,7 +8,7 @@ var URL = "https://example.com/models"
 // https://github.com/sinonjs/sinon/issues/607:
 var JSON_TYPE = /^application\/json\b/
 
-describe("FetchJsonify", function() {
+describe("FetchJSONify", function() {
   beforeEach(function() {
     var xhr = global.XMLHttpRequest = Sinon.FakeXMLHttpRequest
     xhr.onCreate = Array.prototype.push.bind(this.requests = [])
