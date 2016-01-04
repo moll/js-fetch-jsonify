@@ -1,8 +1,11 @@
 {
 	"name": "@moll/fetch-jsonify",
 	"version": "0.2.0",
-	"description": "",
-	"keywords": [],
+	"description": "Fetch API mixin for stringifying JSON and setting Content-Type if unset. Functional and immutable.",
+	"keywords": [
+		"fetch",
+		"json"
+	],
 	"homepage": "https://github.com/moll/js-fetch-jsonify",
 	"bugs": "https://github.com/moll/js-fetch-jsonify/issues",
 
