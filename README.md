@@ -24,7 +24,7 @@ Using
 Wrap the native `fetch` function with the one from FetchJSONify.js:
 
 ```javascript
-var fetchWithJsonify = require("fetch-jsonify")(fetch)
+var fetch = require("fetch-jsonify")(global.fetch)
 ```
 
 Then pass any value or object you'd like stringified under the `json` property:
